@@ -16,11 +16,11 @@ public class MemberDAOTest {
 			memberDTO = memberDAO.login(memberDTO);
 			
 			System.out.println(memberDTO!=null);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
 	}
 

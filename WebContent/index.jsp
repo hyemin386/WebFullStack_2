@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h1>Index Page</h1>
+	<a href="./member/memberLogin.do">Member Login</a>
 </body>
 </html>
