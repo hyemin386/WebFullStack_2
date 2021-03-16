@@ -81,9 +81,14 @@ public class MemberController extends HttpServlet {
 		}
 		
 		//forward
-		RequestDispatcher view = request.getRequestDispatcher(actionforward.getPath());
-		view.forward(request, response);
-		
+		if(actionforward.isCheck()) {
+			RequestDispatcher view = request.getRequestDispatcher(actionforward.getPath());
+			view.forward(request, response);			
+		} else {
+			//redirect
+			response.sendRedirect(actionforward.getPath());		
+		}
+			
 		// TODO Auto-generated method stub
 		/*
 		 * String id = request.getParameter("id"); String pw =
