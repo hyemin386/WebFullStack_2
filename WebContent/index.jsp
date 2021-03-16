@@ -32,7 +32,7 @@
 						<li><a href="#">Page 1-2</a></li>
 						<li><a href="#">Page 1-3</a></li>
 					</ul></li>
-				<li><a href="./bankBook/bankBookList.do">BankBook</a></li> <!--controller가서 list호출하는 것-->
+				<li><a href="#">Page 2</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="./member/memberJoin.do">

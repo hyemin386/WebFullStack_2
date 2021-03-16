@@ -16,17 +16,12 @@ public class MemberService {
 		ActionForward actionForward = new ActionForward();
 		String method = request.getMethod();
 		actionForward.setPath("../WEB-INF/member/memberLogin.jsp");	
-		actionForward.setCheck(true);
 		if(method.toUpperCase().equals("POST")) {
 			MemberDTO memberDTO = new MemberDTO();
 			memberDTO.setId(request.getParameter("id"));
 			memberDTO.setPw(request.getParameter("pw"));
-			memberDTO = memberDAO.login(memberDTO);
-			
-			if(memberDTO != null) {
-				actionForward.setPath("../index.do");
-				actionForward.setCheck(false);				
-			}
+			int result = memberDAO.memberJoin(memberDTO);
+			actionForward.setPath("../index.jsp");
 		}
 		return actionForward;
 	}
@@ -35,7 +30,6 @@ public class MemberService {
 		ActionForward actionForward = new ActionForward();
 		String method = request.getMethod();		
 		actionForward.setPath("../WEB-INF/member/memberJoin.jsp");	
-		actionForward.setCheck(true);
 		if(method.toUpperCase().equals("POST")) {
 			MemberDTO memberDTO = new MemberDTO();
 			memberDTO.setId(request.getParameter("id"));
@@ -44,8 +38,7 @@ public class MemberService {
 			memberDTO.setEmail(request.getParameter("email"));
 			memberDTO.setPhone(request.getParameter("phone"));
 			int result = memberDAO.memberJoin(memberDTO);
-			actionForward.setPath("../index.do");
-			actionForward.setCheck(false);
+			actionForward.setPath("../index.jsp");
 		}
 		
 		return actionForward;
