@@ -27,7 +27,30 @@ public class MemberController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("MemberController");
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		
+		System.out.println("Id: "+id);
+		System.out.println("Pw: "+pw);
+		
+		MemberDAO memberDAO = new MemberDAO();
+		MemberDTO memberDTO = new MemberDTO();
+		memberDTO.setId(id);
+		memberDTO.setPw(pw);
+		
+		try {
+			memberDTO = memberDAO.login(memberDTO);
+			
+			if(memberDTO != null) {
+				System.out.println("로그인 성공");
+			} else {
+				System.out.println("로그인 실패");
+			}
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
