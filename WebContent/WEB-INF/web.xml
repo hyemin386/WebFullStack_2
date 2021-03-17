@@ -20,4 +20,14 @@
 		<servlet-name>member</servlet-name>
 		<url-pattern>/member/*</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>bankBook</servlet-name>
+		<servlet-class>com.iu.s1.bankBook.BankBookController</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>bankBook</servlet-name>
+		<url-pattern>/bankBook/*</url-pattern>
+	</servlet-mapping>
 </web-app>
